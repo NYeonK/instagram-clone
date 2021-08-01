@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Write Your Insta</h1>
+
+<!--정보를 넣기 위한 form 태그-->
+<!--method에는 get과 post가 있음,
+get은 데이터를 얻기 위한 요청으로, 데이터가 url에 보임
+post는 데이터를 생성하기위한 욫어으로, 데이터가 url에 안보임, Csrf 공격 방지-->
+<form action="{% url 'create' %}" method="post">
+  {%csrf_token%} <!--post를 쓰면 이와같은 템플릿 변수를 써줘야 함-->
+  <p>제목: <input type="text" name="title"></p>
+  <p>작성자: <input type="text" name="writer"></p>
+  본문: <textarea name="body" id="" cols="30" rows="10"></textarea>
+  <button type="submit">submit</button>
+</form>
+
+
+{% endblock %}

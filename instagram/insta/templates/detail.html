@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h1>{{insta.title}}</h1>
+  <div>
+  작성자: {{insta.writer}}
+  <br>
+  날짜: {{insta.pub_date}}
+  </div>
+  <hr>
+  <p>{{insta.body}}</p>
+
+  
+{% endblock %}

@@ -14,11 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from instaapp import views
+from django.urls import path, include
+from insta.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.login, name='login'),
-    path('', views.sign, name='sign-up'),
+    path('', home, name="home"),
+    path('insta/', include('insta.urls')), # insta app안에 있는 urls.py를 다 포함하겠단 의미
+    path('account/', include('account.urls')),
 ]

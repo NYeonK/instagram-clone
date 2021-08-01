@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class InstaappConfig(AppConfig):
+class AccountConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'instaapp'
+    name = 'account'

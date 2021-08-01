@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if user.is_authenticated %}
+  {{user.username}}
+  {% endif %}
+  <h1>Instgram Clone</h1>
+  <div>
+    <a href = "{% url 'new' %}">write insta</a>
+  </div>
+  <div class="container">
+  {% for insta in instas %} <!--for문을 통해 instas의 객체들을 하나씩 쪼개서 보여줌-->
+      <div>
+      <h3>{{insta.title}}</h3>
+      {{insta.writer}}
+      {{insta.summary}} <a href = "{% url 'detail' insta.id %}">...more</a>
+      <br>
+        </div>
+  {% endfor %}
+  </div>
+
+{% endblock %}
