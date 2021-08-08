@@ -17,7 +17,7 @@ def login_view(request):
       user = authenticate(request=request, username=username, password=password)
       if user is not None:
         login(request, user)
-    return redirect("home")
+    return redirect("profile")
 
   else:
     form = AuthenticationForm()
@@ -40,4 +40,8 @@ def register_view(request):
   else:
     form = UserCreationForm()
     return render(request, 'signup.html', {'form':form})
+
+
+def profile(request):
+  return render (request, 'profile.html')
   
